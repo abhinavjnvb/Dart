@@ -44,31 +44,33 @@
     border-radius: 50%;
 }
 </style>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
    <script>
    function colors(c){
        switch(c){
            case 'yellow':
-           alert("You clicked Yellow!!!");
+           swal("You clicked Yellow!!!");
            break;
            case 'blue':
-           alert("You clicked Blue!!!");
+           swal("You clicked Blue!!!");
            break;
            case 'red':
-           alert("You clicked Red!!!");
+           swal("You clicked Red!!!");
            break;
            case 'green':
-           alert("You clicked Green!!!");
+           swal("You clicked Green!!!");
            break;
+        
        }
    }
    </script> 
         <div id="container" >
-        <div class="yellow" onclick="colors('yellow')">
-          <div class="blue" onclick="colors('blue')">
-            <div class="red" onclick="colors('red')">
-              <div class="green" onclick="colors('green')">
+        <div class="yellow" onclick="colors('yellow');">
+          <div class="blue" onclick="colors('blue');event.stopPropagation();">
+            <div class="red" onclick="colors('red');event.stopPropagation();">
+              <div class="green" onclick="colors('green');event.stopPropagation();">
               </div>
             </div>
           </div>
